@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+  }
+  
+  .container {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .auth-form {
+    display: grid;
+    align-content: center;
+    border: 2px solid #bbbbbb;
+    border-radius: 10px;
+    padding: 30px;
+    width: 60vh;
+    grid-template:
+      "none auth-label none" 5vh
+      "none login-label none login-input none" 5vh
+      "none password-label none password-input" 5vh
+      "none none login-btn none none" 5vh
+      "none signup-btn none" 5vh
+      / 10vh 15vh 10vh 15vh 10vh;
+  }
+  
+  .m-10 {
+    margin: 10px;
+  }
+  
+  .auth-label-item {
+    grid-area: auth-label;
+  }
+  
+  .login-label-item {
+    grid-area: login-label;
+  }
+  
+  .login-input-item {
+    grid-area: login-input;
+  }
+  
+  .password-label-item {
+    grid-area: password-label;
+  }
+  
+  .password-input-item {
+    grid-area: password-input;
+  }
+  
+  .login-btn-item {
+    grid-area: login-btn;
+  }
+  
+  .signup-btn-item {
+    grid-area: sign-up;
+  }
+  
+  input {
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 15px 10px 15px;
+    border: none;
+    color: white;
+  }
+  
+  .success-color {
+    background-color: #00aa00;
+  }
+  
+  .primary-color {
+    background-color: blue;
+  }

@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  /* justify-content: center; */
+  /* align-content: start; */
+  
+  /* по вертикали   */
+  align-items: stretch;
+  /* по горизонтали */
+  justify-items: stretch;
+
+  text-align: center;
+  text-justify: center;
+
+  align-content: center;
+}
+
+.item-1 {
+  background-color: blue;
+}
+
+.item-2 {
+  background-color: red;
+}
+
+.item-3 {
+  background-color: yellow;
+}
+
+.item-4 {
+  background-color: greenyellow;
+}
+
+.item-5 {
+  background-color: magenta;
+}
+
+.item-6 {
+  background-color: brown;
+}
+
+.item-7 {
+  background-color: cyan;
+}
+
+.item-8 {
+  background-color: coral;
+}
+
+.item-9 {
+  background-color: gray;
+}
