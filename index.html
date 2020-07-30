@@ -1,11 +1,103 @@
 <html lang="en">
   <head>
+    <title>День Верстальщика</title>
+    <meta http-equiv="Content-Type" content="text/html" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta
+      name="description"
+      content="Страница для мастер-класса по адаптивной верстке"
+    />
+    <meta name="keywords" content="мастер-класс, верстка, frontend" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css" />
     <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
   </head>
   <body>
+    <section id="first">
+      <article>
+        <div class="block">
+          <div class="date f15px upper aligner">
+            <i class="fa fa-clock-o" aria-hidden="true"></i> 25 июля в 10:00
+          </div>
+          <img
+            src="./img/wheel.png"
+            alt="wheel"
+            class="wheel animate__animated animate__bounce"
+          />
+          <div class="icon1 f17px bold">
+            Погрузимся в процесс верстки с нуля
+          </div>
+          <div class="icon2 f17px bold">
+            Вместе научимся писать красивый код
+          </div>
+          <div class="basics">
+            <div class="title f13px bold aligner upper p10px">
+              Будем изучать основы
+            </div>
+            <div class="skills f14px light aligner upper p10px">
+              <i class="fa fa-html5" aria-hidden="true"></i> HTML
+              <i class="fa fa-css3" aria-hidden="true"></i> CSS
+              <i class="fa fa-code" aria-hidden="true"></i> Responsive
+            </div>
+          </div>
+          <a href="#program" class="btn upper aligner f15px bold">
+            Смотреть как все будет
+            <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section id="program">
+      <article>
+        <h2 class="text-main-color">Программа мастер-класса</h2>
+        <div class="icons clearfix">
+          <div class="one bold f17px aligner text-main-color lefter">
+            Беглое повторение базовых тегов HTML и CSS
+          </div>
+          <div class="one bold f17px aligner text-main-color lefter">
+            Верстка реального проекта и погружение в разработку
+          </div>
+          <div class="one bold f17px aligner text-main-color lefter">
+            Создание отзывчивости для сверстанного сайта
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="red">
+      <article>
+        <h2 class="text-main-color upper bold">Это красный экран</h2>
+        <div class="explain aligner f15px">
+          <p class="">
+            Точка, в которой вам нужно решить, хотите ли вы по-настоящему
+            улучшить свои навыки верстки за несколько часов интенсивной практики
+            под моим присмотром?
+          </p>
+          <form action="" class="w80vw">
+            <input type="text" name="name" class="cell" placeholder="Имя" />
+            <input type="email" name="email" class="cell" placeholder="Email" />
+            <button type="submit" class="act">Поехали</button>
+          </form>
+          <h3 class="decider f23px bold aligner">Решили?</h3>
+          <div class="explain aligner f15px">
+            Я знал, что на вас можно положиться! Смело заполняйте форму и прямо
+            сейчас получите на почту запись мастер-класса, материалы, которые я
+            создал на занятии, и запись полезного вебинара по основам HTML/CSS
+          </div>
+        </div>
+      </article>
+    </section>
+
     <script src="./js/index.js"></script>
   </body>
 </html>
