@@ -16,12 +16,6 @@ p {
   line-height: 1.38em;
 }
 
-article {
-  width: 1170px;
-  margin: 0px auto;
-  position: relative;
-}
-
 .clearfix:after {
   content: "";
   display: table;
