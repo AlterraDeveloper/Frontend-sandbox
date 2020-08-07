@@ -13,6 +13,18 @@
 
 // === Variables ===
 $color-white:#fff;
+$color-main:#414141;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+
 // === / Variables ===
 
 // === Common ===
@@ -21,8 +33,13 @@ body {
     color: #414141;
 }
 
+.section-outer {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
 .section-inner {
-    width: 1180px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 
@@ -168,7 +185,6 @@ body {
 
             &-input {
                 flex: 1;
-                padding-right: 40px;
 
                 input {
                     @include font-montserrat;
@@ -192,10 +208,32 @@ body {
                         background: rgba(255, 255, 255, 0.6);
                     }
                 }
+
+                @media(min-width:$screen-sm) {
+                    padding-right: 40px;
+                }
+
+                @media(max-width:$screen-xs-max) {
+                    padding-bottom: 20px;
+                }
+            }
+
+            @media(max-width:$screen-xs-max) {
+                flex-direction: column;
+
+                &-button {
+                    flex: 1;
+
+                    .btn-main {
+                        display: block;
+                        width: 100%;
+                    }
+                }
             }
         }
     }
 }
+
 
 // === / header ===
 
@@ -214,8 +252,6 @@ body {
     }
 
     &__content {
-        padding-right: 90px;
-
         .title {
             font-size: 32px;
             line-height: 51px;
@@ -235,6 +271,21 @@ body {
             height: auto;
         }
     }
+
+    @media (max-width:$screen-md-max) {
+        flex-direction: column;
+
+        &__video {
+            order: -1;
+            margin-bottom: 20px;
+        }
+    }
+
+    @media (min-width:$screen-lg) {
+        &__content {
+            padding-right: 90px;
+        }
+    }
 }
 
 .section-promo-2 {
@@ -244,9 +295,20 @@ body {
     border-top: 1px solid #e2e2e2;
     text-align: center;
 
-    .description-item+.description-item {
-        margin-left: 40px;
+    @media(max-width: $screen-xs-max) {
+        flex-direction: column;
+
+        .description-item+.description-item {
+            margin-top: 40px;
+        }
     }
+
+    @media(min-width: $screen-sm) {
+        .description-item+.description-item {
+            margin-left: 40px;
+        }
+    }
+
 }
 
 // === / promo ===
@@ -261,14 +323,9 @@ body {
         display: flex;
     }
 
-    &__img {
-        align-self: flex-end;
 
-    }
 
     &__content {
-        align-self: center;
-        padding-left: 50px;
 
         &-text {
             @include font-montserrat;
@@ -287,6 +344,36 @@ body {
             font-size: 20px;
             line-height: 29px;
 
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        .section-inner {
+            flex-direction: column;
+        }
+
+        &__content {
+            order: -1;
+            margin-bottom: 40px;
+        }
+
+        &__img {
+            align-self: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    @media (min-width: $screen-md) {
+        &__img {
+            align-self: flex-end;
+        }
+
+        &__content {
+            align-self: center;
+            padding-left: 50px;
         }
     }
 }
@@ -309,8 +396,8 @@ body {
         font-size: 16px;
         line-height: 28px;
         font-weight: 300;
-        width: 50%;
-        margin: 0 auto 80px;
+        margin-top: 0;
+        margin-bottom: 80px;
     }
 
     &__list {
@@ -348,10 +435,10 @@ body {
             }
 
             &_description {
+                margin-bottom: 50px;
                 font-size: 16px;
                 line-height: 28px;
                 font-weight: 300;
-                margin-bottom: 50px;
             }
 
             &.active {
@@ -359,6 +446,19 @@ body {
             }
         }
 
+        @media(max-width: $screen-xs-max) {
+            flex-direction: column;
+        }
+    }
+
+
+
+    @media(min-width: $screen-sm) {
+        &__subtitle {
+            width: 50%;
+            margin-left: auto;
+            margin: 0 auto 80px;
+        }
     }
 }
 
@@ -384,8 +484,13 @@ body {
 
         font-size: 20px;
         line-height: 30px;
-        width: 50%;
         margin: 0 auto 40px;
+    }
+
+    @media (min-width:$screen-lg) {
+        &__description {
+            width: 50%;
+        }
     }
 }
 
@@ -413,11 +518,6 @@ body {
         list-style: none;
 
         li {
-
-            &+li {
-                margin-left: 60px;
-            }
-
             a {
                 font-size: 14px;
                 line-height: 20px;
@@ -431,6 +531,25 @@ body {
                 }
             }
         }
+
+        @media (max-width: $screen-xs-max) {
+            flex-direction: column;
+            text-align: center;
+
+            li {
+                &+li {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        @media (min-width: $screen-sm) {
+            li {
+                &+li {
+                    margin-left: 60px;
+                }
+            }
+        }
     }
 
     &__copyright_and_links {
@@ -440,8 +559,22 @@ body {
         justify-content: space-between;
         font-size: 14px;
         line-height: 18px;
-        width: 70%;
-        margin: 0 auto;
+
+        @media (min-width:$screen-xl) {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        @media (max-width:$screen-sm-max) {
+            flex-direction: column;
+            text-align: center;
+
+            &-links {
+                order: -1;
+            }
+
+        }
+
     }
 }
 
@@ -449,10 +582,8 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
 
     li {
-
         &+li {
             margin-left: 20px;
         }
@@ -465,6 +596,15 @@ body {
                 text-decoration: underline;
             }
         }
+    }
+
+    @media(max-width: $screen-sm-max) {
+        display: inline-flex;
+        margin-bottom: 50px;
+    }
+
+    @media(min-width: $screen-md) {
+        display: flex;
     }
 }
 
