@@ -21,3 +21,28 @@ p {
   display: table;
   width: 100%;
 }
+
+.container {
+  display: flex;
+  height: 500px;
+  background-color: rgba(0, 0, 0, .1);
+  justify-content: space-around;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  align-content: space-around;
+
+}
+
+.item {
+  background-color: #ccc;
+  border: 1px solid red;
+  /* flex-basis: 60px; */
+}
+
+.active {
+  order: 1;
+  flex-shrink: 2;
+  text-align: center;
+  background-color: purple;
+  color: #fff;
+}
