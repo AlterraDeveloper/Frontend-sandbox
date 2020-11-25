@@ -1,6 +1,8 @@
 body {
   padding: 0;
   margin: 0;
+  color: #fff;
+  font-family: 'Bad Script', sans-serif;
 }
 
 div,
@@ -22,27 +24,60 @@ p {
   width: 100%;
 }
 
-.container {
+.slider {
+  height: 100vh;
   display: flex;
-  height: 500px;
-  background-color: rgba(0, 0, 0, .1);
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  /* flex-wrap: wrap; */
-  align-content: space-around;
-
 }
 
 .item {
-  background-color: #ccc;
-  border: 1px solid red;
-  /* flex-basis: 60px; */
+  background-color: #aeaeae;
+  flex-basis: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: all .2s;
 }
 
-.active {
-  order: 1;
-  flex-shrink: 2;
-  text-align: center;
-  background-color: purple;
-  color: #fff;
+.item span {
+  font-size: 2rem;
+  text-shadow: 0px 0px 10px #000;
+}
+
+
+.item-1 {
+  background-color: red;
+}
+
+.item-2 {
+  background-color: green;
+}
+
+.item-3 {
+  background-color: blue;
+}
+
+.item-4 {
+  background-color: violet;
+}
+
+.item:hover {
+  flex-basis: 50%;
+}
+
+@media (max-width: 640px) {
+  .slider {
+    flex-flow: column;
+  }
+
+  .item {
+    width: 100%;
+    height: 25vh;
+  }
+
+  .item:hover {
+    flex-grow: 30%;
+  }
 }
