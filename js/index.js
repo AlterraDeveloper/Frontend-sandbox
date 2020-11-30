@@ -548,12 +548,14 @@ let linkedList = {
 // console.log(nth(7489, linkedList));
 
 console.log(linkedListToString(arrayToList([10, 20])));
+console.log(arrayToList([10, 20]));
 // → {value: 10, rest: {value: 20, rest: null}}
 console.log(listToArray(arrayToList([10, 20, 30])));
 // → [10, 20, 30]
 console.log(linkedListToString(prepend(10, prepend(20, null))));
 console.log(prepend(10, prepend(20, null)));
 // → {value: 10, rest: {value: 20, rest: null}}
-console.log(nth(linkedList, 1));
+console.log(nth(linkedList, 3));
 console.log(nth(arrayToList([10, 20, 30]), 1));
+console.log(typeof null);
 // → 20
