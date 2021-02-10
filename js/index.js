@@ -25,7 +25,7 @@
 // console.log(isEven(75));
 // console.log(isEven(-2));
 
-// function countChar(string, char) {
+// function logChar(string, char) {
 //     charQty = 0
 //     for (let i = 0; i < string.length; i++) {
 //         if (string.charAt(i) === char) charQty++;
@@ -33,7 +33,7 @@
 //     return charQty;
 // }
 
-// console.log(countChar("qwertyasdqwe", 'i'));
+// console.log(logChar("qwertyasdqwe", 'i'));
 
 // function phi(table) {
 //     return (table[3] * table[0] - table[2] * table[1]) /
@@ -504,7 +504,7 @@ function linkedListToString(list, output = '') {
 
 function arrayToList(array) {
     // if (array.length === 0) return list
-    list = {
+    let list = {
         value: array.pop(),
         rest: {}
     }
@@ -540,4 +540,57 @@ function prepend(val, list) {
 // linkedList = prepend(6, linkedList)
 // linkedList = prepend(7, linkedList)
 // console.log(linkedListToString(linkedList))
-console.log(linkedListToString(arrayToList([1, 2, 3])));
+// console.log(linkedListToString(arrayToList([1, 2, 3]))); 
+
+//Deep Equal
+
+function deepEqual(first, second) {
+
+    firstType = typeof first
+    secondType = typeof second
+
+    if (firstType !== secondType) return false
+
+    if (firstType === 'object' && first !== null && second !== null) {
+
+        if (Object.keys(first).length === Object.keys(second).length) {
+
+            for (const key of Object.keys(first)) {
+                if (deepEqual(first[key], second[key]) === false) return false
+            }
+            return true
+        }
+
+        return false;
+
+    } else {
+        return first === second
+    }
+
+}
+
+console.log(deepEqual(5, null)) // false
+console.log(deepEqual(null, 5)) //false
+console.log(deepEqual("hdvuie", 5)) //false
+console.log(deepEqual(10, 5)) //false
+console.log(deepEqual('scve', '')) // false
+console.log(deepEqual(null, null)) //true
+console.log(deepEqual('111', '111')) //true
+console.log(deepEqual(5, 5)) //true
+var obj = {
+    here: {
+        is: "an"
+    },
+    object: 2
+}
+console.log(deepEqual(obj, obj)) //true
+console.log(deepEqual(obj, {
+    here: 1,
+    object: 2
+})) //false
+console.log(deepEqual(obj, {
+    here: {
+        is: "an"
+    },
+    object: 2
+})); //true
