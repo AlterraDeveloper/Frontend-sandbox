@@ -484,18 +484,6 @@ function reverseArrayInPlace(array) {
 // console.log(user === null);
 // console.log(user == null);
 
-
-let linkedList = {
-    value: 1,
-    rest: {
-        value: 2,
-        rest: {
-            value: 3,
-            rest: null
-        }
-    }
-}
-
 function linkedListToString(list, output = '') {
     output += list.value
     if (list.rest === null) return output
@@ -516,8 +504,13 @@ function arrayToList(array) {
         }
         list.rest = current
         current = current.rest
+        list = {}
+        for (let i = array.length - 1; i > -1; i--) {
+            list = prepend(array[i], list, i === array.length - 1)
+        }
+
+        return list
     }
-    return list
 }
 
 function listToArray(list, array = []) {
@@ -526,23 +519,63 @@ function listToArray(list, array = []) {
     return listToArray(list.rest, array)
 }
 
-function prepend(val, list) {
+function prepend(val, list, isFirst) {
     newList = {
         value: val,
-        rest: list
+        rest: isFirst ? null : list
     }
     return newList
 }
 
+function nth(list, val) {
+    let current = list
+    let position = 0
+    while (current !== null) {
+        if (position === val) return current.value
+        current = current.rest
+        position++
+    }
+
+    return undefined
+}
+
+let linkedList = {
+    value: 178,
+    rest: {
+        value: 2324,
+        rest: {
+            value: 89,
+            rest: null
+        }
+    }
+}
+
 // console.log(linkedListToString(linkedList))
 // console.log(listToArray(linkedList))
-// linkedList = prepend(5, linkedList)
-// linkedList = prepend(6, linkedList)
 // linkedList = prepend(7, linkedList)
+// linkedList = prepend(6, linkedList)
+// linkedList = prepend(5, linkedList)
 // console.log(linkedListToString(linkedList))
 // console.log(linkedListToString(arrayToList([1, 2, 3]))); 
+// console.log(arrayToList([1, 2, 3]));
+// console.log(linkedListToString(arrayToList([1, 2, 3])));
+// console.log(nth(2, linkedList));
+// console.log(nth(7489, linkedList));
 
-//Deep Equal
+console.log(linkedListToString(arrayToList([10, 20])));
+console.log(arrayToList([10, 20]));
+// → {value: 10, rest: {value: 20, rest: null}}
+console.log(listToArray(arrayToList([10, 20, 30])));
+// → [10, 20, 30]
+console.log(linkedListToString(prepend(10, prepend(20, null))));
+console.log(prepend(10, prepend(20, null)));
+// → {value: 10, rest: {value: 20, rest: null}}
+console.log(nth(linkedList, 3));
+console.log(nth(arrayToList([10, 20, 30]), 1));
+console.log(typeof null);
+// → 20
+
+//Deep Equal    
 
 function deepEqual(first, second) {
 
