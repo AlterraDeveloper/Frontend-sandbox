@@ -1,70 +1,61 @@
-// function createCalcFun(n) {
-//     return function(){
-//         console.log(n * 1000);
-//     }
-// }
+console.log("Request data...");
 
-// const fiveK = createCalcFun(5)
-// fiveK() 
+// setTimeout(() => {
+//   console.log("Preparing data...");
 
-// function CreateIncrementor(n) {
-//     return function (num) {
-//         return n + num
-//     }
-// }
+//   const backendData = {
+//     server: "aws",
+//     port: 2000,
+//     status: "working",
+//   };
 
-// const addOneTo = CreateIncrementor(1)
-// console.log(addOneTo(10));
+//   setTimeout(() => {
+//     backendData.modified = true;
+//     console.log("Data received", backendData);
+//   }, 2000);
+// }, 2000);
 
+// const p = new Promise(function (resolve, reject) {
+//   setTimeout(() => {
+//     console.log("Preparing data...");
+//     const backendData = {
+//       server: "aws",
+//       port: 2000,
+//       status: "working",
+//     };
+//     resolve(backendData);
+//   }, 2000);
+// });
 
-function urlGenerator(baseUrl) {
-    return function(controller){
-        return baseUrl + '/' + controller
-    }
-}
+// p.then((data) => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       data.modified = true;
+//       resolve(data);
+//     }, 2000);
+//   });
 
-const accessToGit = urlGenerator('https://gitlab.ua')
-// const accessToTrello = urlGenerator('https://trello.io')
+//   //   p2.then((clientData) => {
+//   //     console.log("Data received", clientData);
+//   //   });
+// }).then((clientData) => {
+//   console.log("Data received", clientData);
+// });
 
-console.log(accessToGit('auth'));
-console.log(accessToGit('auth2'));
-console.log(accessToGit('auth3'));
-console.log(accessToGit('auth4'));
-console.log(accessToGit('auth5'));
-console.log(accessToGit('auth6'));
-console.log(accessToGit('auth7'));
-// console.log(accessToTrello('register/google/new'));
+const sleep = (ms) =>
+  new Promise((resolve) =>
+    setTimeout(() => {
+      resolve();
+    }, ms)
+  );
 
+// sleep(2000).then(() => console.log("After 2 sec"));
+// sleep(3000).then(() => console.log("After 3 sec"));
 
-//моя версия
-function bind(object, callbackfn){
-    return callbackfn.call(object)
-}
+Promise.all([sleep(2000), sleep(5000)]).then(() => {
+  console.log("all promises");
+});
 
-//версия Владилена более расширенная
-function bindExt(context, fn){
-    return function(...args) {
-        fn.apply(context, args)
-    }
-}
-
-function logPerson(){
-    console.log(`Person: ${this.name} ${this.age} ${this.job}`);
-}
-
-const person1 = {
-    name : 'Eugene',
-    age: 22,
-    job: 'FullStack'
-} 
-
-const person2 = {
-    name : 'Ivan',
-    age: 30,
-    job: 'Backend'
-} 
-
-bind(person1, logPerson)
-bind(person2, logPerson)
-bindExt(person1, logPerson)()
-bindExt(person2, logPerson)()
+Promise.race([sleep(2000), sleep(5000)]).then(() => {
+  console.log("race promises");
+});
