@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="./css/template.css" />
     <link rel="stylesheet" href="./css/custom.css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/popup.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css"
+      integrity="sha512-G/T7HQJXSeNV7mKMXeJKlYNJ0jrs8RsWzYG7rVACye+qrcUhEAYKYzaa+VFy6eFzM2+/JT1Q+eqBbZFSHmJQew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
   <body>
@@ -37,103 +46,102 @@
             novalidate="novalidate"
           >
             <div class="pweb-fields">
-                <div class="product-list">
-                  <div class="title-form-new">
-                    <span class="title-color">Список</span> покупок
-                    <span></span>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-9 col-sm-9 col-xs-8 left-order">
-                      <div class="title-order">Наименование</div>
+              <div class="product-list">
+                <div class="title-form-new">
+                  <span class="title-color">Список</span> покупок
+                  <span></span>
+                </div>
+                <div class="row">
+                  <div class="col-md-9 col-sm-9 col-xs-8 left-order">
+                    <div class="title-order">Наименование</div>
 
-                      <div class="pweb-field-container">
-                        <input
-                          name="tovar[]"
-                          class="pweb-input new-pw-in"
-                          type="text"
-                          placeholder="Наименование товара"
-                        />
-                      </div>
-                      <div class="pweb-field-container">
-                        <input
-                          name="tovar[]"
-                          class="pweb-input new-pw-in"
-                          type="text"
-                          placeholder="Наименование товара"
-                        />
-                      </div>
-                      <div class="pweb-field-container">
-                        <input
-                          name="tovar[]"
-                          class="pweb-input new-pw-in"
-                          type="text"
-                          placeholder="Наименование товара"
-                        />
-                      </div>
-                      <div class="pweb-field-container">
-                        <input
-                          name="tovar[]"
-                          class="pweb-input new-pw-in"
-                          type="text"
-                          placeholder="Наименование товара"
-                        />
-                      </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="tovar[]"
+                        class="pweb-input new-pw-in"
+                        type="text"
+                        placeholder="Наименование товара"
+                      />
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-4 right-order">
-                      <div class="quant-order">Количество</div>
-
-                      <div class="pweb-field-container">
-                        <input
-                          name="kolvo[]"
-                          class="pweb-input integer new-pw-in"
-                          type="text"
-                        />
-                      </div>
-                      <div class="pweb-field-container">
-                        <input
-                          name="kolvo[]"
-                          class="pweb-input integer new-pw-in"
-                          type="text"
-                        />
-                      </div>
-                      <div class="pweb-field-container">
-                        <input
-                          name="kolvo[]"
-                          class="pweb-input integer new-pw-in"
-                          type="text"
-                        />
-                      </div>
-                      <div class="pweb-field-container">
-                        <input
-                          name="kolvo[]"
-                          class="pweb-input integer new-pw-in"
-                          type="text"
-                        />
-                      </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="tovar[]"
+                        class="pweb-input new-pw-in"
+                        type="text"
+                        placeholder="Наименование товара"
+                      />
+                    </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="tovar[]"
+                        class="pweb-input new-pw-in"
+                        type="text"
+                        placeholder="Наименование товара"
+                      />
+                    </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="tovar[]"
+                        class="pweb-input new-pw-in"
+                        type="text"
+                        placeholder="Наименование товара"
+                      />
                     </div>
                   </div>
-                  <div class="hidd-buttons">
-                    <button type="button" class="add-row b_add">
-                      Добавить строку
-                    </button>
-                    <button type="button" class="clear-list b_clear">
-                      Очистить
-                    </button>
+                  <div class="col-md-3 col-sm-3 col-xs-4 right-order">
+                    <div class="quant-order">Количество</div>
+
+                    <div class="pweb-field-container">
+                      <input
+                        name="kolvo[]"
+                        class="pweb-input integer new-pw-in"
+                        type="text"
+                      />
+                    </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="kolvo[]"
+                        class="pweb-input integer new-pw-in"
+                        type="text"
+                      />
+                    </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="kolvo[]"
+                        class="pweb-input integer new-pw-in"
+                        type="text"
+                      />
+                    </div>
+                    <div class="pweb-field-container">
+                      <input
+                        name="kolvo[]"
+                        class="pweb-input integer new-pw-in"
+                        type="text"
+                      />
+                    </div>
                   </div>
                 </div>
+                <div class="hidd-buttons">
+                  <button type="button" class="add-row b_add">
+                    Добавить строку
+                  </button>
+                  <button type="button" class="clear-list b_clear">
+                    Очистить
+                  </button>
+                </div>
               </div>
-              <div class="pweb-column pweb-width-50">
-                <div class="pweb-field-container pweb-field-buttons">
-                  <div class="pweb-field new-pweb-field">
-                    <button
-                      type="submit"
-                      class="btn"
-                      data-role="none"
-                      id="pwebcontact652_send"
-                    >
-                      Оформить заказ
-                    </button>
-                  </div>
+            </div>
+            <div class="pweb-column pweb-width-50">
+              <div class="pweb-field-container pweb-field-buttons">
+                <div class="pweb-field new-pweb-field">
+                  <button
+                    type="submit"
+                    class="btn"
+                    data-role="none"
+                    id="pwebcontact652_send"
+                  >
+                    Оформить заказ
+                  </button>
                 </div>
               </div>
             </div>
@@ -143,6 +151,10 @@
           </form>
         </div>
       </div>
+    </div>
+    <div class="popup">
+      <span>Success!</span>
+      <span class="fa fa-check"></span>
     </div>
 
     <script src="./js/index.js"></script>

@@ -1,0 +1,45 @@
+#pwebcontact649 {
+	position: relative;
+}
+
+@keyframes example {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 100%;
+	}
+}
+
+
+.popup {
+	position: absolute;
+	border-radius: 10px;
+	/* left: 200px;
+	top: 489px; */
+	width: 15vw;
+	height: 10vh;
+	/* display: flex; */
+	align-items: center;
+	justify-content: space-between;
+	z-index: 1000;
+	padding: 10px 10px 10px 50px;
+	margin-top: 10px;
+	background-color: #fec12e;
+	animation-name: example;
+	animation-duration: 2s;
+	display: none;
+}
+
+
+
+.popup span {
+	font-size: 1.5rem;
+	color: white;
+	font-weight: 600;
+}
+
+.popup span.fa {
+	font-size: 2.5rem;
+}
